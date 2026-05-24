@@ -200,11 +200,11 @@ body.light-mode .text-button.active {
 
 .clock-time small {
   position: absolute;
-  right: -1.7em;
+  right: -0.42em;
   bottom: 0.22em;
   min-width: 1.5em;
   color: var(--green);
-  font-size: 0.2em;
+  font-size: 0.18em;
   line-height: 1;
   text-align: left;
   text-shadow: 0 0 22px rgba(0, 242, 138, 0.72);
@@ -929,7 +929,13 @@ body.light-mode .message.user {
   }
 
   .clock-time {
-    font-size: 4.3rem;
+    grid-template-columns: auto auto auto auto;
+    gap: 0.05em;
+    font-size: 3.95rem;
+  }
+
+  .clock-time small {
+    display: none;
   }
 
   .mode-pills button {
