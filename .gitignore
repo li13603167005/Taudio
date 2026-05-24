@@ -1,0 +1,28 @@
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Runtime state and generated assets
+server/state.db
+server/*.db
+cache/
+public/netease-login.html
+
+# Logs
+*.log
+
+# Personal user data
+user/users.json
+user/profiles/*.md
+!user/profiles/.gitkeep
+!user/profiles/default.example.md
+
+# Dependencies and tooling
+node_modules/
+.DS_Store
+.idea/
+.vscode/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

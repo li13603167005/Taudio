@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#020403" />
+    <title>Taudio 私人电台</title>
+    <link rel="stylesheet" href="/styles.css?v=30" />
+    <link rel="manifest" href="/manifest.json" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div class="brand">
+          <img src="/assets/station-cover.svg?v=17" alt="Taudio" />
+          <h1>Taudio</h1>
+        </div>
+        <div class="mode-pills" aria-label="电台模式">
+          <button id="darkModeButton" class="active" type="button" aria-pressed="true">DARK</button>
+          <button id="lightModeButton" type="button" aria-pressed="false">LIGHT</button>
+          <button id="poetryModeButton" type="button" aria-pressed="false">POETRY</button>
+          <button id="focusModeButton" class="active" type="button" aria-pressed="true">FOCUS</button>
+        </div>
+      </header>
+
+      <section class="clock-hero" aria-label="当前电台时间">
+        <div id="clockTime" class="clock-time"><span>--</span><b>:</b><span>--</span><small>--</small></div>
+        <div id="clockDay" class="clock-day">Monday</div>
+        <div id="clockDate" class="clock-date">20 · APR · 2026</div>
+        <div class="on-air"><span></span>ON AIR</div>
+      </section>
+
+      <section class="player-pane" aria-label="Taudio 播放器">
+        <div class="track-card">
+          <div class="equalizer" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <p class="eyebrow">Now Playing</p>
+          <div class="track-line">
+            <strong id="trackTitle">准备中</strong>
+            <span id="trackArtist">AI DJ</span>
+          </div>
+        </div>
+
+        <div class="poem-card">
+          <p class="eyebrow">AI DJ</p>
+          <p id="djLine" class="dj-line">正在接入私人电台...</p>
+        </div>
+
+        <div class="transport" aria-label="播放控制">
+          <button id="playPause" class="icon-button primary" type="button" title="播放或暂停" aria-label="播放或暂停">▶</button>
+          <button id="nextButton" class="icon-button" type="button" title="下一段" aria-label="下一段">↷</button>
+          <button id="listButton" class="text-button" type="button" aria-expanded="false" aria-controls="queueDrawer">LIST</button>
+          <label class="volume-control" title="音量">
+            <span>VOL</span>
+            <input id="volume" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="音量" />
+          </label>
+          <div class="progress-row">
+            <span id="elapsedTime">0:00</span>
+            <input id="progress" type="range" min="0" max="1000" step="1" value="0" aria-label="播放进度" />
+            <span id="durationTime">0:00</span>
+          </div>
+        </div>
+
+        <section id="queueDrawer" class="queue-drawer" aria-label="播放列表" hidden>
+          <div class="queue-header">
+            <span>PLAYED / 24H</span>
+            <strong id="queueCount">0 TRACKS</strong>
+          </div>
+          <ol id="queueList" class="queue-list"></ol>
+        </section>
+
+        <audio id="radioAudio" preload="auto"></audio>
+      </section>
+
+      <section class="live-strip" aria-label="Taudio 状态">
+        <div class="live-brand">
+          <img src="/assets/station-cover.svg?v=17" alt="" />
+          <strong>Taudio</strong>
+          <span><i></i>LIVE</span>
+        </div>
+        <div id="miniClock">--:--</div>
+      </section>
+
+      <section class="workbench">
+        <div class="user-bar">
+          <label>
+            <span>LISTENER</span>
+            <select id="userSelect"></select>
+          </label>
+          <form id="userForm" class="user-form">
+            <input id="newUserName" autocomplete="off" placeholder="新增用户" />
+            <button type="submit">添加</button>
+          </form>
+        </div>
+
+        <nav class="tabs" aria-label="视图切换">
+          <button class="tab active" data-tab="chat" type="button">电台</button>
+          <button class="tab" data-tab="profile" type="button">画像</button>
+          <button class="tab" data-tab="settings" type="button">设置</button>
+        </nav>
+
+        <section id="chat" class="panel active" aria-label="电台对话">
+          <div id="messages" class="messages"></div>
+          <form id="chatForm" class="chat-form">
+            <input id="messageInput" autocomplete="off" placeholder="Say something to the DJ..." />
+            <button type="submit">↑</button>
+          </form>
+        </section>
+
+        <section id="profile" class="panel" aria-label="个人画像">
+          <div class="metric-grid">
+            <div>
+              <span>当前模式</span>
+              <strong id="currentMood">-</strong>
+            </div>
+            <div>
+              <span>最近播放</span>
+              <strong id="playCount">0</strong>
+            </div>
+          </div>
+          <form id="profileForm" class="profile-form">
+            <label for="profileEditor">听歌习惯和偏好文档</label>
+            <textarea id="profileEditor" spellcheck="false"></textarea>
+            <div class="profile-actions">
+              <span id="profileStatus"></span>
+              <button type="submit">保存画像</button>
+            </div>
+          </form>
+          <ul id="tasteList" class="plain-list"></ul>
+        </section>
+
+        <section id="settings" class="panel" aria-label="电台设置">
+          <label class="toggle-row">
+            <span>DJ 说话时自动压低音乐</span>
+            <input id="ducking" type="checkbox" checked />
+          </label>
+          <label class="toggle-row">
+            <span>提前预加载下一段音频</span>
+            <input id="prefetch" type="checkbox" checked />
+          </label>
+          <div id="providerStatus" class="provider-status"></div>
+          <div id="planList" class="plan-list"></div>
+        </section>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js?v=30"></script>
+  </body>
+</html>

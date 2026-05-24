@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Taudio station cover">
+  <defs>
+    <linearGradient id="cover-bg" x1="70" y1="48" x2="430" y2="456" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f3eee2"/>
+      <stop offset=".52" stop-color="#d9cda9"/>
+      <stop offset="1" stop-color="#7fa38e"/>
+    </linearGradient>
+    <linearGradient id="disc" x1="116" y1="114" x2="398" y2="402" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1b2325"/>
+      <stop offset="1" stop-color="#0f1416"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="34" fill="#111719"/>
+  <rect x="34" y="34" width="444" height="444" rx="28" fill="url(#cover-bg)"/>
+  <circle cx="256" cy="256" r="148" fill="url(#disc)"/>
+  <circle cx="256" cy="256" r="96" fill="none" stroke="#f3eee2" stroke-opacity=".16" stroke-width="2"/>
+  <circle cx="256" cy="256" r="54" fill="#f3eee2"/>
+  <circle cx="256" cy="256" r="18" fill="#de5538"/>
+  <path d="M155 202c56-52 146-52 202 0" fill="none" stroke="#f3eee2" stroke-width="12" stroke-linecap="round"/>
+  <path d="M184 230c40-33 104-33 144 0" fill="none" stroke="#f6d06f" stroke-width="10" stroke-linecap="round"/>
+  <path d="M214 258c24-17 60-17 84 0" fill="none" stroke="#7fa38e" stroke-width="9" stroke-linecap="round"/>
+  <path d="M86 396h128" stroke="#111719" stroke-width="10" stroke-linecap="round"/>
+  <path d="M298 396h128" stroke="#111719" stroke-width="10" stroke-linecap="round"/>
+  <path d="M96 118h84" stroke="#111719" stroke-width="10" stroke-linecap="round"/>
+  <path d="M332 118h84" stroke="#111719" stroke-width="10" stroke-linecap="round"/>
+</svg>

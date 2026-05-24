@@ -1,0 +1,15 @@
+{
+  "name": "taudio",
+  "version": "0.1.0",
+  "description": "A local-first personal AI radio MVP.",
+  "type": "module",
+  "scripts": {
+    "start": "node server/app.js",
+    "check": "node scripts/self-check.js",
+    "netease:login": "node scripts/netease-qr-login.js",
+    "test": "node scripts/self-check.js"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

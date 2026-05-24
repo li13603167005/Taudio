@@ -1,0 +1,8 @@
+{
+  "anchors": [
+    { "query": "city pop night drive", "mood": "night" },
+    { "query": "soft electronic focus", "mood": "focus" },
+    { "query": "warm indie evening", "mood": "evening" },
+    { "query": "clean morning pop", "mood": "morning" }
+  ]
+}

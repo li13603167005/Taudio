@@ -1,0 +1,15 @@
+{
+  "name": "Taudio 私人电台",
+  "short_name": "Taudio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#101113",
+  "theme_color": "#101113",
+  "icons": [
+    {
+      "src": "/assets/station-cover.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
