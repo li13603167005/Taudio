@@ -3,10 +3,9 @@
 Taudio 是一个本地优先的私人 AI 电台原型。它把 AI DJ、音乐推荐、用户听歌画像、天气上下文、播放历史和移动端 Web UI 放在同一个体验里，目标不是再做一个歌单播放器，而是探索“懂你当下状态的私人电台”应该是什么样。
 
 ## 项目展示
-
-桌面端：
-
-![Taudio desktop preview](docs/images/taudio-desktop.png)
+主界面：
+<img width="469" height="759" alt="image" src="https://github.com/user-attachments/assets/477734c3-4bcb-4113-9271-95330c6edba1" />
+用户识别：<img width="622" height="405" alt="image" src="https://github.com/user-attachments/assets/bcfa5974-2878-40f9-b267-ab95c7cfbbc5" />
 
 ## 核心能力
 
