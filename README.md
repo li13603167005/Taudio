@@ -8,10 +8,6 @@ Taudio 是一个本地优先的私人 AI 电台原型。它把 AI DJ、音乐推
 
 ![Taudio desktop preview](docs/images/taudio-desktop.png)
 
-移动端：
-
-![Taudio mobile preview](docs/images/taudio-mobile.png)
-
 ## 核心能力
 
 - 提供一个 PWA 风格的私人电台网页界面。
